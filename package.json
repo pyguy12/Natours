@@ -1,0 +1,22 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Demo project for learning advanced CSS, SASS, and responsive design.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pyguy12/Natours.git"
+  },
+  "author": "Warren Wu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pyguy12/Natours/issues"
+  },
+  "homepage": "https://github.com/pyguy12/Natours#readme",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
+}
