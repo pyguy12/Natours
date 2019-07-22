@@ -1,0 +1,229 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+/* the * selects everything and here, we're just using it to do a basic set-up of our webpage by removing the default properties that aren't
+/* useful. */
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  box-sizing: border-box;
+}
+
+/* background-position determines how the background-image sits in its box. */
+/* You can have multiple background-images. The first one is shown on the top. Separated by commas. */
+/* linear-gradient(to directions, color1, color2) */
+/* the clip-path property takes the result of the polygon(top-left, top-right, bottom-right, bottom-left) function to make a clipping path. */
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.808),
+      rgba(40, 180, 133, 0.801)
+    ),
+    url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+/* With absolute positioning, the top and such attributes are counted 40 px from the {direction} of a relative parent element. That means
+/* you need to change your parent element's position to relative, like I have above. */
+.logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+
+.logo {
+  height: 3.5rem;
+}
+
+/* To have something happen on hover, use the :hover css selector */
+/* 
+.logo:hover {
+  animation: 1s hoverEffect ease-in;
+} 
+*/
+
+/* The best way to center an object is to give it absolute position, 50% top and bottom and to transform translate(-50%,-50%) */
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+}
+
+/* block display makes the element take up 100% of the width of the line it occupies and also moves other elements down to the next line. */
+.heading-primary-main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1.15rem;
+  animation: 1s ease-out moveInRight;
+}
+
+/* CSS psuedo-selectors are started with the ":" character and are used to style elements under a certain state. In this case, we're using the
+/* :link psuedo-selector for our .btn class. :link just represents a normal, unvisited link. You can style multiple elements or psuedo-elements
+/* at once using the comma to chain them together in your CSS selector. */
+/* display:inline-block lets you set the width and height of inline elements where you otherwise couldn't. The main difference between
+/* inline-block and block is that block adds a line-break after the element and inline-block doesn't.  Sometimes, change the height or width
+/* of an inline element, it'll just overlap your block elements. */
+/* Links are considered text elements, you can text-align: center in the parent to center them */
+/* You can use the transition property if you just want to make simple transitions between states of the element. The transition property
+/* below selects all of the states we have CSS psuedo-selectors for on the .btn class and gives them 0.2s to transition between each other. */
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  position: relative;
+  font-size: 1.6rem;
+}
+
+/* translateY() to go up is negative, down is postive. */
+/* The box-shadow property takes the x-offset, y-offset, blur and color. The y-offset positive is down, negative is up. */
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+/* The ::after psuedo-element makes an element and puts it after the first element in the selector. To make it appear, you need to specify
+/* both the content and display properties. The content property can be empty. The psuedo-elements height and width are both based on the
+/* element it's a psuedo element of. */
+/* If you want to hide an element behind another, you can make the ::after psuedo element position:absolute and give it top and left properties
+/* of 0 and give it a z-index of less than the covering element. */
+/* Remember that you have to put the transition property on the initial element that's rendered. */
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: white;
+}
+
+/* You can chain on psuedo-selectors and psuedo-elements to make psuedo-elements render only on certain states. */
+/* We used the opacity:0 and the transition property of the initial rendered element to make it fade out on hover. */
+.btn:hover::after {
+  transform: scale(1.5);
+  opacity: 0;
+}
+
+/* If you want an element to animated in but it's showing up on the page too early, use the animation-fill-mode property and set it to
+/* backwards to make it transparent before the animation starts. */
+.btn-animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
+
+/* To make an animation, you need to use @keyframes animationName to define the animation. It's kind of like a function. Within the body of
+/* your animation, you need to set keyframes at percentage values, 0% representing the beginning and 100% being the end of the animation.
+/* Inside of your keyframes, you can set values for properties you want to animate. It's best to only animate transforms and opacity for
+/* broswer performance. To apply your animation, your desired DOM object needs 2 properties to be added to it. The first one is animation-name
+/* and the second is animation-duration. The animation-name is the same as the one we defined down here. Alternatively, you can just use
+/* the animation property and put your property values in any order you like, CSS will figure it out. Sometimes, your animation will
+/* produce an unwanted "shake" at the end it. To prevent this, add a backface-visibility: hidden; to the parent element.*/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
