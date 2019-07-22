@@ -12,133 +12,8 @@ html {
 }
 
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-.header {
-  height: 95vh;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.808)), to(rgba(40, 180, 133, 0.801))), url(../img/hero.jpg);
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.808), rgba(40, 180, 133, 0.801)), url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  position: relative;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-
-.header__logo {
-  height: 3.5rem;
-}
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  margin-bottom: 6rem;
-}
-
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  -webkit-animation-name: moveInLeft;
-          animation-name: moveInLeft;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-}
-
-.heading-primary--sub {
-  display: block;
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: 1.15rem;
-  -webkit-animation: 1s ease-out moveInRight;
-          animation: 1s ease-out moveInRight;
-}
-
-.btn:link, .btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  border-radius: 10rem;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-  position: relative;
-  font-size: 1.6rem;
-}
-
-.btn:hover {
-  -webkit-transform: translateY(-0.3rem);
-          transform: translateY(-0.3rem);
-  -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
-}
-
-.btn:active {
-  -webkit-transform: translateY(-0.1rem);
-          transform: translateY(-0.1rem);
-  -webkit-box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
-}
-
-.btn--white {
-  background-color: #fff;
-  color: #777;
-}
-
-.btn--white::after {
-  background-color: #fff;
-}
-
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-}
-
-.btn:hover::after {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-  opacity: 0;
-}
-
-.btn--animated {
-  -webkit-animation: moveInBottom 0.5s ease-out 0.75s;
-          animation: moveInBottom 0.5s ease-out 0.75s;
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
 }
 
 @-webkit-keyframes moveInLeft {
@@ -233,5 +108,133 @@ body {
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  margin-bottom: 6rem;
+}
+
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  -webkit-animation-name: moveInLeft;
+          animation-name: moveInLeft;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.heading-primary--sub {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1.15rem;
+  -webkit-animation: 1s ease-out moveInRight;
+          animation: 1s ease-out moveInRight;
+}
+
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  position: relative;
+  font-size: 1.6rem;
+}
+
+.btn:hover {
+  -webkit-transform: translateY(-0.3rem);
+          transform: translateY(-0.3rem);
+  -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  -webkit-transform: translateY(-0.1rem);
+          transform: translateY(-0.1rem);
+  -webkit-box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.btn--white {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn--white::after {
+  background-color: #fff;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.btn:hover::after {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  opacity: 0;
+}
+
+.btn--animated {
+  -webkit-animation: moveInBottom 0.5s ease-out 0.75s;
+          animation: moveInBottom 0.5s ease-out 0.75s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+.header {
+  height: 95vh;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.808)), to(rgba(40, 180, 133, 0.801))), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.808), rgba(40, 180, 133, 0.801)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+
+.header__logo {
+  height: 3.5rem;
+}
+
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */
