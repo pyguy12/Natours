@@ -50,13 +50,13 @@ body {
 
 /* With absolute positioning, the top and such attributes are counted 40 px from the {direction} of a relative parent element. That means
 /* you need to change your parent element's position to relative, like I have above. */
-.logo-box {
+.header__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
 
-.logo {
+.header__logo {
   height: 3.5rem;
 }
 
@@ -69,7 +69,7 @@ body {
 
 /* The best way to center an object is to give it absolute position, 50% top and bottom and to transform translate(-50%,-50%) */
 
-.text-box {
+.header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -85,7 +85,7 @@ body {
 }
 
 /* block display makes the element take up 100% of the width of the line it occupies and also moves other elements down to the next line. */
-.heading-primary-main {
+.heading-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
@@ -94,7 +94,7 @@ body {
   animation-duration: 1s;
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
   font-size: 3rem;
   font-weight: 700;
@@ -135,7 +135,7 @@ body {
   box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777;
 }
@@ -159,7 +159,7 @@ body {
   transition: all 0.4s;
 }
 
-.btn-white::after {
+.btn--white::after {
   background-color: white;
 }
 
@@ -172,7 +172,7 @@ body {
 
 /* If you want an element to animated in but it's showing up on the page too early, use the animation-fill-mode property and set it to
 /* backwards to make it transparent before the animation starts. */
-.btn-animated {
+.btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
 }
